@@ -1,0 +1,65 @@
+diff -up cjkuni-uming-fonts-0.2.20080216.1/64-ttf-arphic-uming.conf.2-rhbz475743 cjkuni-uming-fonts-0.2.20080216.1/64-ttf-arphic-uming.conf
+--- cjkuni-uming-fonts-0.2.20080216.1/64-ttf-arphic-uming.conf.2-rhbz475743	2008-02-19 16:25:21.000000000 +1000
++++ cjkuni-uming-fonts-0.2.20080216.1/64-ttf-arphic-uming.conf	2009-02-02 01:18:23.000000000 +1000
+@@ -1,25 +1,40 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+-	<alias>
+-		<family>serif</family>
+-		<prefer>
+-			<family>AR PL UMing HK</family>
+-			<family>AR PL UMing CN</family>
+-		</prefer>
+-	</alias>
+-	<alias>
+-		<family>sans-serif</family>
+-		<prefer>
+-			<family>AR PL UMing HK</family>
+-			<family>AR PL UMing CN</family>
+-		</prefer>
+-	</alias>
+-	<alias>
+-		<family>monospace</family>
+-		<prefer>
+-			<family>AR PL UMing HK</family>
+-			<family>AR PL UMing CN</family>
+-		</prefer>
+-	</alias>
++	<match>
++		<test name="lang" compare="contains">
++			<string>zh</string>
++		</test>
++		<test name="family">
++			<string>serif</string>
++		</test>
++		<edit name="family" mode="prepend" binding="same">
++			<string>AR PL UMing HK</string>
++			<string>AR PL UMing CN</string>
++		</edit>
++	</match>
++	<match>
++		<test name="lang" compare="contains">
++			<string>zh</string>
++		</test>
++		<test name="family">
++			<string>sans-serif</string>
++		</test>
++		<edit name="family" mode="prepend" binding="same">
++			<string>AR PL UMing HK</string>
++			<string>AR PL UMing CN</string>
++		</edit>
++	</match>
++	<match>
++		<test name="lang" compare="contains">
++			<string>zh</string>
++		</test>
++		<test name="family">
++			<string>monospace</string>
++		</test>
++		<edit name="family" mode="prepend" binding="same">
++			<string>AR PL UMing HK</string>
++			<string>AR PL UMing CN</string>
++		</edit>
++	</match>
+ </fontconfig>

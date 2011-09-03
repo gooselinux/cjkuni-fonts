@@ -1,0 +1,52 @@
+diff -up cjkuni-uming-fonts-0.2.20080216.1/25-ttf-arphic-uming-bitmaps.conf.3-rhbz459680 cjkuni-uming-fonts-0.2.20080216.1/25-ttf-arphic-uming-bitmaps.conf
+--- cjkuni-uming-fonts-0.2.20080216.1/25-ttf-arphic-uming-bitmaps.conf.3-rhbz459680	2009-02-03 09:53:25.000000000 +1000
++++ cjkuni-uming-fonts-0.2.20080216.1/25-ttf-arphic-uming-bitmaps.conf	2009-02-03 09:56:12.000000000 +1000
+@@ -2,14 +2,38 @@
+ <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+ <fontconfig>
+ 
+-	<match target="font">
+-	  <test name="family">
+-	  <string>AR PL UMing CN</string>
+-	  <string>AR PL UMing HK</string>
+-	  <string>AR PL UMing TW</string>
+-	  <string>AR PL UMing TW MBE</string>
+-	  </test>
+-    	  <edit name="hinting"><bool>true</bool></edit>
+-          <edit name="autohint"><bool>false</bool></edit>
+-	</match>
++  <match target="font">
++    <test name="family">
++      <string>AR PL UMing CN</string>
++      <string>AR PL UMing HK</string>
++      <string>AR PL UMing TW</string>
++      <string>AR PL UMing TW MBE</string>
++    </test>
++    <edit name="autohint"><bool>false</bool></edit>
++  </match>
++
++  <match target="font">
++    <test name="family">
++      <string>AR PL UMing CN</string>
++      <string>AR PL UMing HK</string>
++      <string>AR PL UMing TW</string>
++      <string>AR PL UMing TW MBE</string>
++    </test>
++    <test name="pixelsize" compare="more_eq"><int>17</int></test>
++    <edit name="antialias" mode="assign"><bool>true</bool></edit>
++    <edit name="hinting" mode="assign"><bool>true</bool></edit>
++  </match>
++
++  <match target="font">
++    <test name="family">
++      <string>AR PL UMing CN</string>
++      <string>AR PL UMing HK</string>
++      <string>AR PL UMing TW</string>
++      <string>AR PL UMing TW MBE</string>
++    </test>
++    <test name="pixelsize" compare="less"><int>17</int></test>
++    <edit name="antialias" mode="assign"><bool>false</bool></edit>
++    <edit name="hinting" mode="assign"><bool>false</bool></edit>
++  </match>
++
+ </fontconfig>
